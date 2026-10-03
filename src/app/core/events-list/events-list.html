@@ -1,0 +1,138 @@
+
+<section class="events-container">
+
+  <h1>Nos événements</h1>
+
+  <p class="subtitle">
+    Découvrez les événements à venir en Tunisie.
+  </p>
+
+
+  <!-- LISTE DES ÉVÉNEMENTS -->
+
+  <div class="events-grid">
+
+    @for (event of events(); track event.id) {
+
+      <article class="event-card">
+
+        <img
+          [src]="event.imageUrl"
+          [alt]="event.titre"
+          class="event-image"
+        >
+
+        <div class="event-content">
+
+          <span class="category">
+            {{ event.category }}
+          </span>
+
+          <h2>
+            {{ event.titre | uppercase }}
+          </h2>
+
+          <p>
+            {{ event.description }}
+          </p>
+
+          <p>
+            📅 {{ event.date | date:'dd/MM/yyyy' }}
+          </p>
+
+          <p>
+            📍 {{ event.lieu }}
+          </p>
+
+          <p>
+            💰 {{ event.prix }} DT
+          </p>
+
+          <p>
+            🎟️ {{ event.nbPlaces }} places disponibles
+          </p>
+
+
+          <!-- LIKE -->
+
+          <button
+            class="like-button"
+            (click)="likeEvent(event)"
+          >
+            ❤️ J'aime ({{ event.nbLikes }})
+          </button>
+
+
+          <!-- FAVORIS -->
+
+          <button
+            class="favorite-button"
+            (click)="estFavori(event)
+              ? retirerFavori(event)
+              : ajouterFavori(event)"
+          >
+
+            {{ estFavori(event)
+              ? '❤️ Retirer des favoris'
+              : '🤍 Ajouter aux favoris'
+            }}
+
+          </button>
+
+        </div>
+
+      </article>
+
+    }
+
+    @empty {
+
+      <p>
+        Aucun événement disponible pour le moment.
+      </p>
+
+    }
+
+  </div>
+
+
+  <!-- LISTE DES FAVORIS -->
+
+  <section class="favorites-container">
+
+    <h2>
+      ❤️ Mes événements favoris
+    </h2>
+
+
+    @for (event of getEvenementsFavoris(); track event.id) {
+
+      <article class="favorite-item">
+
+        <h3>
+          {{ event.titre | uppercase }}
+        </h3>
+
+        <button
+          class="favorite-button"
+          (click)="retirerFavori(event)"
+        >
+          Retirer des favoris
+        </button>
+
+      </article>
+
+    }
+
+    @empty {
+
+      <p>
+        Aucun événement dans vos favoris.
+      </p>
+
+    }
+
+  </section>
+
+</section>
+```

@@ -1,0 +1,22 @@
+.navbar {
+  min-height: 70px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 8px 22px;
+}

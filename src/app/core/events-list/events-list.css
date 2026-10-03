@@ -1,0 +1,82 @@
+
+.events-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.events-container h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #222;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.event-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px #00000015;
+  transition: transform 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 20px;
+}
+
+.event-content h2 {
+  color: #222;
+  font-size: 21px;
+}
+
+.event-content p {
+  line-height: 1.5;
+  color: #555;
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #e8f1ff;
+  color: #0866d9;
+  border-radius: 15px;
+  font-size: 13px;
+}
+
+.like-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background: #0877ff;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.like-button:hover {
+  background: #0056c7;
+}
